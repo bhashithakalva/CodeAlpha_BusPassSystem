@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+{% if error %}
+
+<div class="error-box">
+
+    <h2>{{ error }}</h2>
+
+    <a href="/" class="back-btn">
+        Go Back
+    </a>
+
+</div>
+
+{% else %}
+<head>
+
+    <title>Ticket Success</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Ticket Booked Successfully!</h1>
+
+    <div class="result">
+
+        <h2>Ticket Details</h2>
+
+        <p><b>Name:</b> {{ name }}</p>
+
+        <p><b>Source:</b> {{ source }}</p>
+
+        <p><b>Destination:</b> {{ destination }}</p>
+
+        <p><b>Seats:</b> {{ seats }}</p>
+
+        <p><b>Total Price:</b> ₹{{ price }}</p>
+
+        <p><b>Ticket ID:</b> {{ ticket_id }}</p>
+        
+        <p><b>Date:</b> {{ date }}</p>
+
+        <p><b>Bus Type:</b> {{ bus_type }}</p>
+
+        <p><b>Distance:</b> {{ distance }} km</p>
+
+    </div>
+
+    <br>
+
+    <a href="/" class="back-btn">Book Another Ticket</a>
+    
+
+</div>
+{% endif %}
+</body>
+</html>

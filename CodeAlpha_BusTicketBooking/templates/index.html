@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cloud Ticket Booking System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bus Ticket Booking</h1>
+    <p class="subtitle">
+        Book your journey quickly and securely
+    </p>
+
+    <form action="/book" method="POST">
+
+        <input type="text"
+        name="name"
+        placeholder="Passenger Name"
+        required>
+
+        <select name="source" required>
+
+        <option value="">Select Source</option>
+
+        <option>Hyderabad</option>
+        <option>Vijayawada</option>
+        <option>Visakhapatnam</option>
+        <option>Tirupati</option>
+        <option>Guntur</option>
+        <option>Nellore</option>
+        <option>Kurnool</option>
+        <option>Rajahmundry</option>
+        <option>Kakinada</option>
+        <option>Warangal</option>
+        <option>Anantapur</option>
+        <option>Ongole</option>
+        <option>Kadapa</option>
+        <option>Eluru</option>
+        <option>Khammam</option>
+
+        </select>
+
+        <select name="destination" required>
+
+        <option value="">Select Destination</option>
+
+        <option>Hyderabad</option>
+        <option>Vijayawada</option>
+        <option>Visakhapatnam</option>
+        <option>Tirupati</option>
+        <option>Guntur</option>
+        <option>Nellore</option>
+        <option>Kurnool</option>
+        <option>Rajahmundry</option>
+        <option>Kakinada</option>
+        <option>Warangal</option>
+        <option>Anantapur</option>
+        <option>Ongole</option>
+        <option>Kadapa</option>
+        <option>Eluru</option>
+        <option>Khammam</option>
+
+        </select>
+
+        <input type="date"
+        name="date"
+        required>
+        <select name="bus_type" required>
+
+        <option value="">Select Bus Type</option>
+
+        <option>Express</option>
+        <option>Super Luxury</option>
+        <option>Sleeper</option>
+        <option>AC Sleeper</option>
+
+        </select>
+
+        <input type="number"
+        name="seats"
+        placeholder="Number of Seats"
+        required>
+        
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <button type="submit">
+            Book Ticket
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
